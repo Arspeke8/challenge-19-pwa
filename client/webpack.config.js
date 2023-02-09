@@ -20,10 +20,11 @@ module.exports = () => {
     plugins: [
       new HtmlWebpackPlugin({
         title: 'Progressive Web App',
-        template: './src/index.html',
+        template: './index.html',
         filename: 'index.html',
         chunks: ['main'],
       }),
+    
       new WebpackPwaManifest({
         name: 'PWA Text Editor',
         short_name: 'PWA Editor',
@@ -32,20 +33,36 @@ module.exports = () => {
         theme_color: '#ffffff',
         icons: [
           {
-            src: path.resolve('./src/images/logo.png'),
+            src: path.resolve('src/images/logo.png'),
             sizes: [96, 128, 192, 256, 384, 512],
+            destination: path.join('icons'),
           },
         ]
       }),
       new InjectManifest({
         swSrc: './src/sw.js',
-        importWorkboxFrom: 'local',
+        swDest: 'sw.js',
       }),
     ],
 
-    module: {          
+    module: {     
+      // CSS loaders     
       rules: [
-        
+        {
+          test: /\.css$/i,
+          use: ['style-loader', 'css-loader'],
+        },
+        {
+          test: /\.js$/,
+          exclude: /node_modules/,
+          use: {
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-env'],
+            },
+          },
+
+        }
       ],
     },
   };
