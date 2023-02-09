@@ -37,4 +37,4 @@ THEN I should have proper build scripts for a webpack application
 
 # Ryandong7@gmail.com
  
-# Project Link:  https://github.com/Arspeke8/challenge-19-pwa
+# Project Link: https://github.com/Arspeke8/challenge-19-pwa
