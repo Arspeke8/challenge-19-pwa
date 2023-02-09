@@ -33,6 +33,8 @@ THEN I should have proper build scripts for a webpack application
 
 # Learned how to use webpack to bundle files, learned how to use workbox to cache files, learned how to use indexedDB to store data locally
 
+# ![PWA](/challenge-19-pwa/local.png)
+
 # Ryan Dong
 
 # Ryandong7@gmail.com
