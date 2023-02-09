@@ -18,10 +18,32 @@ module.exports = () => {
       path: path.resolve(__dirname, 'dist'),
     },
     plugins: [
-      
+      new HtmlWebpackPlugin({
+        title: 'Progressive Web App',
+        template: './src/index.html',
+        filename: 'index.html',
+        chunks: ['main'],
+      }),
+      new WebpackPwaManifest({
+        name: 'PWA Text Editor',
+        short_name: 'PWA Editor',
+        description: 'A text editor that works offline',
+        background_color: '#01579b',
+        theme_color: '#ffffff',
+        icons: [
+          {
+            src: path.resolve('./src/images/logo.png'),
+            sizes: [96, 128, 192, 256, 384, 512],
+          },
+        ]
+      }),
+      new InjectManifest({
+        swSrc: './src/sw.js',
+        importWorkboxFrom: 'local',
+      }),
     ],
 
-    module: {
+    module: {          
       rules: [
         
       ],
