@@ -1,8 +1,8 @@
 # Challenge 19: PWA
 
-## created
+## created a text editor web application that allows users to create and save notes
 
-# Made with express, sequelize, mysql, dotenv, insomnia
+# made with HTML, CSS, JavaScript, Node.js, Express.js, IndexedDB, Webpack, Workbox, and Heroku
 
 # Acceptance Criteria
 GIVEN a text editor web application
